@@ -9,9 +9,10 @@ Maven Multi-module project to illustrate how to structure a project based on an 
 | Technology | Purpose |
 | ---------- |----------|
 |Hexagonal architecture| I tried to follow an hexagonal clean architecture when creating this simple example. You can take a look into the project modules to see how the code was divided into application, domain and infrastructure layers. You can also take a look into the interfaces I'm using as "ports" to avoid layer couplings. I think that it could be interesting to understand the difference between the `Loan` entity at domain level (I will try to complete this example with some DDD concepts), and the `LoanEntity` at the infrastructure layer. |
+| Java 21 | The project uses Java 21 as specified in the main pom.xml |
 | [Lombok](https://projectlombok.org/) | Helper to create builders, setters, getters, etc|
 | [MapStruct](https://mapstruct.org/) | Helper to create mappers to pass objects between the different layers |
-| [Quarkus](https://quarkus.io/) | Quarkus is a full-stack, Kubernetes-native Java framework made for Java virtual machines (JVMs) and native compilation, optimizing Java specifically for containers and enabling it to become an effective platform for serverless, cloud, and Kubernetes environments. |
+| [Quarkus](https://quarkus.io/) | Quarkus 3.6.4 is a full-stack, Kubernetes-native Java framework made for Java virtual machines (JVMs) and native compilation, optimizing Java specifically for containers and enabling it to become an effective platform for serverless, cloud, and Kubernetes environments. |
 | [JUnit 5](https://quarkus.io/guides/getting-started-testing) | Unit tests creation |
 | [Mockito](https://quarkus.io/blog/mocking/) | Adds mockito framework for testing purposes |
 
@@ -59,6 +60,12 @@ Maven Multi-module project to illustrate how to structure a project based on an 
 | [Azure Blob Storage Checkpoint Store](https://learn.microsoft.com/en-us/azure/event-hubs/event-processor-balance-partition-load) | Azure Blob Storage checkpoint store for Event Processor Client to track partition ownership and checkpoint events |
 | [Apache Avro](https://avro.apache.org/) | Data serialization system for efficient binary encoding |
 
+### HashiCorp Vault Integration
+
+| Technology | Purpose |
+| ---------- |----------|
+| [Quarkus Vault](https://quarkiverse.github.io/quarkiverse-docs/quarkus-vault/dev/) | Integration with HashiCorp Vault for secure secrets management |
+
 ## 🚀 How to execute the application
 
 ### 🛠️ DEV mode
@@ -75,7 +82,11 @@ After creating all artifacts you can run the project in dev mode (hotreload enab
 mvn quarkus:dev -pl bootloader
 ```
 
-`Bootloader` module is the providing the quarkus startup point. If you want to switch the db adapter and use `adapter-postgresql`, you have to comment the `adapter-dynamodb` dependency in the `pom.xml` file and uncomment the `adapter-postgresql`.
+`Bootloader` module is the providing the quarkus startup point. If you want to switch the database adapter, you can modify the `bootloader/pom.xml` file:
+
+- To use PostgreSQL: uncomment the `adapter-postgresql` dependency and comment out `adapter-dynamodb` and `adapter-cosmosdb`
+- To use DynamoDB: uncomment the `adapter-dynamodb` dependency and comment out `adapter-postgresql` and `adapter-cosmosdb`
+- To use Cosmos DB: uncomment the `adapter-cosmosdb` dependency and comment out `adapter-postgresql` and `adapter-dynamodb`
 
 This project is using [dev services](https://quarkus.io/guides/dev-services) to provide the external services like DB, Event broker, Identity Manager, etc.
 
