@@ -20,6 +20,8 @@
         <module>adapter-postgresql</module>
         <module>adapter-dynamodb</module>
         <module>adapter-rest</module>
-        <module>adapter-kafka</module>        
+        <module>adapter-kafka</module>
+        <module>adapter-cosmosdb</module>
+        <module>adapter-eventhubs</module>
     </modules>
 </project>

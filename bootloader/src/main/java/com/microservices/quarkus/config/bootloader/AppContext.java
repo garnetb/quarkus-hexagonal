@@ -1,6 +1,6 @@
 package com.microservices.quarkus.config.bootloader;
 
-import javax.enterprise.inject.Produces;
+import jakarta.enterprise.inject.Produces;
 
 import com.microservice.quarkus.application.ports.api.LoanAPIService;
 import com.microservice.quarkus.application.service.LoanAPIServiceImpl;

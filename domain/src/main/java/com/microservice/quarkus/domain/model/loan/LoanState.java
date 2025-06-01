@@ -3,7 +3,9 @@ package com.microservice.quarkus.domain.model.loan;
 import com.microservice.quarkus.domain.shared.ValueObject;
 
 public enum LoanState implements ValueObject<LoanState> {    
-    APPROVED(String.valueOf("APPROVED")), REJECTED(String.valueOf("REJECTED")), PENDING(String.valueOf("PENDING"));
+    APPROVED(String.valueOf("APPROVED")),
+    REJECTED(String.valueOf("REJECTED")),
+    PENDING(String.valueOf("PENDING"));
 
     private String state;
 

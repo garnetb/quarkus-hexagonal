@@ -28,6 +28,12 @@ Maven Multi-module project to illustrate how to structure a project based on an 
 | ---------- |----------|
 | [Dynamodb enhanced](https://quarkiverse.github.io/quarkiverse-docs/quarkus-amazon-services/dev/amazon-dynamodb.html) | Dynamodb enhanced library based on [AWS SDK for Java 2.0](https://github.com/aws/aws-sdk-java-v2), compatible with native image and quarkus. |
 
+### Azure Cosmos DB adapter
+
+| Technology | Purpose |
+| ---------- |----------|
+| [Azure Cosmos DB SDK](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/sdk-java-v4) | Azure Cosmos DB Java SDK for NoSQL API, providing a client-side logical representation for the Azure Cosmos DB service. |
+
 ### REST adapter
 
 | Technology | Purpose |
@@ -42,7 +48,16 @@ Maven Multi-module project to illustrate how to structure a project based on an 
 
 | Technology | Purpose |
 | ---------- |----------|
-| TBC | TBC |
+| [SmallRye Reactive Messaging](https://quarkus.io/guides/kafka) | Quarkus provides support for Apache Kafka through SmallRye Reactive Messaging framework |
+| [Apache Avro](https://avro.apache.org/) | Data serialization system for efficient binary encoding |
+
+### Azure Event Hubs adapter
+
+| Technology | Purpose |
+| ---------- |----------|
+| [Azure Event Hubs SDK](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-java-get-started-send) | Azure Event Hubs client library for Java, providing a client-side logical representation for the Azure Event Hubs service |
+| [Azure Blob Storage Checkpoint Store](https://learn.microsoft.com/en-us/azure/event-hubs/event-processor-balance-partition-load) | Azure Blob Storage checkpoint store for Event Processor Client to track partition ownership and checkpoint events |
+| [Apache Avro](https://avro.apache.org/) | Data serialization system for efficient binary encoding |
 
 ## 🚀 How to execute the application
 

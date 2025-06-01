@@ -3,9 +3,9 @@ package com.microservice.quarkus.infrastructure.db.dynamodb.config;
 import java.time.Instant;
 import java.util.UUID;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.event.Observes;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.event.Observes;
+import jakarta.inject.Inject;
 
 import com.microservice.quarkus.domain.model.loan.LoanState;
 import com.microservice.quarkus.infrastructure.db.dynamodb.dbo.LoanEntity;

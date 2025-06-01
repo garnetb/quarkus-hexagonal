@@ -1,7 +1,7 @@
 package com.microservice.quarkus.infrastructure.db.dynamodb.config;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Produces;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Produces;
 
 import com.microservice.quarkus.infrastructure.db.dynamodb.dbo.LoanEntity;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;

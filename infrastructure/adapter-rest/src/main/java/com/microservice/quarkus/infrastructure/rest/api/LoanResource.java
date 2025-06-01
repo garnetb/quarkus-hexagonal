@@ -3,14 +3,14 @@ package com.microservice.quarkus.infrastructure.rest.api;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response;
 
 import com.microservice.quarkus.application.ports.api.LoanAPIService;
 import com.microservice.quarkus.domain.model.loan.Loan;
 import com.microservice.quarkus.infrastructure.rest.mapper.LoanDTOMapper;
-import com.micrservice.quarkus.infrastructure.rest.api.LoansAPI;
-import com.micrservice.quarkus.infrastructure.rest.dto.LoanDTO;
-import com.micrservice.quarkus.infrastructure.rest.dto.ResponseMessageDTO;
+import com.microservice.quarkus.infrastructure.rest.api.LoansAPI;
+import com.microservice.quarkus.infrastructure.rest.dto.LoanDTO;
+import com.microservice.quarkus.infrastructure.rest.dto.ResponseMessageDTO;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,7 +25,7 @@ public class LoanResource implements LoansAPI{
     @Override
     public Response doGetAllLoans() {
         log.debug("doGetAllLoans()");
-        
+
         Response response;
 
         var loans = loanService.getAllLoans();
@@ -35,7 +35,7 @@ public class LoanResource implements LoansAPI{
         } else {
             response = Response.noContent().build();
         }
-        
+
         return response;
     }
 

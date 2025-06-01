@@ -11,19 +11,19 @@ import org.mockito.Mockito;
 import com.microservice.quarkus.application.ports.api.LoanAPIService;
 import com.microservice.quarkus.domain.model.loan.Loan;
 import com.microservice.quarkus.domain.model.loan.LoanId;
-import com.micrservice.quarkus.infrastructure.rest.dto.LoanDTO;
+import com.microservice.quarkus.infrastructure.rest.dto.LoanDTO;
 import io.quarkus.test.junit.QuarkusTest;
-import io.quarkus.test.junit.mockito.InjectMock;
+import io.quarkus.test.InjectMock;
 import io.restassured.RestAssured;
 
 @QuarkusTest
-public class LoanResourceTest {
+class LoanResourceTest {
 
   @InjectMock
   LoanAPIService loanAPIService;
 
   @BeforeEach
-  public void beforeEach() {
+  void beforeEach() {
     LoanId loanId = LoanId.builder().id("4d3f3d2e-fb28-4315-a20c-a9975aa0cdc3").build();
     Loan dummyProp = Loan.builder().id(loanId)
         .annualInterestRate(1.15)
@@ -37,7 +37,7 @@ public class LoanResourceTest {
   }
 
   @Test
-  public void testPropByIdExists() {
+  void testPropByIdExists() {
     LoanDTO got = RestAssured.given()
         .pathParam("id", "4d3f3d2e-fb28-4315-a20c-a9975aa0cdc3")
         .when().get("/api/v1/loans/{id}")
@@ -51,7 +51,7 @@ public class LoanResourceTest {
   }
 
   @Test
-  public void testPropByIdNotExists() {
+  void testPropByIdNotExists() {
     RestAssured.given()
         .pathParam("id", "164e9d65-6804-4a48-a101-fadbd0e07149")
         .when().get("/api/v1/loans/{id}")

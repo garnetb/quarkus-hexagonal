@@ -2,13 +2,13 @@ package com.microservice.quarkus.infrastructure.rest;
 
 import java.util.List;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import com.microservice.quarkus.application.ports.api.LoanAPIService;
 import com.microservice.quarkus.domain.model.loan.Loan;
 
 @ApplicationScoped
-public class LoanApiServiceDefault implements LoanAPIService {
+class LoanApiServiceDefault implements LoanAPIService {
 
     @Override
     public Loan getLoan(String id) {

@@ -1,0 +1,27 @@
+{
+  "namespace": "com.microservice.quarkus.infrastructure.events.eventhubs",
+  "type": "record",
+  "name": "LoanStateChangedAvro",
+  "fields": [
+    {
+      "name": "eventId",
+      "type": "string"
+    },
+    {
+      "name": "occurredOn",
+      "type": "string"
+    },
+    {
+      "name": "loanId",
+      "type": "string"
+    },
+    {
+      "name": "fromState",
+      "type": "string"
+    },
+    {
+      "name": "state",
+      "type": "string"
+    }
+  ]
+}

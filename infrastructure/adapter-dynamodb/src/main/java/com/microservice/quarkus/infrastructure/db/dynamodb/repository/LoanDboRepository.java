@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import com.microservice.quarkus.domain.model.loan.Loan;
 import com.microservice.quarkus.domain.ports.spi.LoanRepository;
